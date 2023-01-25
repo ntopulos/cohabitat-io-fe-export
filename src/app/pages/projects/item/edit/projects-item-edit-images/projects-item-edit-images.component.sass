@@ -1,0 +1,56 @@
+.list
+  max-width: 100%
+  border: solid 1px #ccc
+  display: block
+  background: white
+  border-radius: 4px
+  overflow: hidden
+  margin-bottom: 1em
+
+.list-box
+  padding: 20px 10px
+  border-bottom: solid 1px #ccc
+  color: rgba(0, 0, 0, 0.87)
+  display: grid
+  grid-template-columns: 40px 200px auto 150px
+  gap: 1em
+  background: white
+  font-size: 14px
+  position: relative
+
+  &.main
+    background-color: lighten(#366380, 57%)
+
+  .handle
+    color: #ccc
+    cursor: move
+    user-select: none
+    display: flex
+    align-items: center
+
+  table
+    th
+      text-align: left
+      padding: .2em .5em .2em 0
+
+  button:not(:first-child)
+    margin-top: .25em
+
+.cdk-drag-preview
+  box-sizing: border-box
+  border-radius: 4px
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)
+
+.cdk-drag-placeholder
+  opacity: 0
+
+.cdk-drag-animating
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1)
+
+.list-box:last-child
+  border: none
+
+.list.cdk-drop-list-dragging .list-box:not(.cdk-drag-placeholder)
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1)
+
+

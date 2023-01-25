@@ -1,0 +1,7 @@
+<div *ngIf="notifications" class="{{type}}">
+  <ul>
+    <li *ngFor="let notification of notifications | keyvalue">{{ notification.value }}</li>
+  </ul>
+</div>
+
+<div *ngIf="notification" class="{{type}}">{{ notification }}</div>

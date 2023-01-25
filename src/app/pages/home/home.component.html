@@ -1,0 +1,81 @@
+<header>
+  <h1>{{'home.content-title'|translate}}</h1>
+  <p>{{'home.content-subtitle'|translate}}</p>
+  <div>
+    <a mat-button href="https://www.co-habitat.net/en/tools#cohabitat-io" target="_blank">
+      {{'g.action.learn-more'|translate}}
+      <mat-icon>launch</mat-icon>
+    </a>
+  </div>
+</header>
+
+<div class="projects-partners">
+  <div>
+    <section class="projects mat-body">
+      <header>
+        <h1 class="mat-h2">{{'home.projects.t'|translate}}</h1>
+        <p class="mat-caption">{{'home.projects.st'|translate}}</p>
+      </header>
+      <p>{{'home.projects.c'|translate}}</p>
+      <div>
+        <a mat-button color="primary" [routerLink]="'/projects/'|localize">
+          {{'home.projects.more'|translate}}
+        </a>
+        <a mat-button [routerLink]="'/projects/create'|localize">
+          {{'home.projects.add'|translate}}
+        </a>
+      </div>
+    </section>
+
+    <section class="partners mat-body">
+      <header>
+        <h1 class="mat-h2">{{'home.partners.t'|translate}}</h1>
+        <p class="mat-caption">{{'home.partners.st'|translate}}</p>
+      </header>
+      <p>{{'home.partners.c'|translate}}</p>
+      <div>
+        <a mat-button color="primary" [routerLink]="'/partners'|localize">
+          {{'home.partners.more'|translate}}
+        </a>
+        <a mat-button [routerLink]="'/partners/create'|localize">
+          {{'home.partners.add'|translate}}
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="about">
+  <div>
+    <section class="mat-body">
+      <article>
+        <header>
+          <mat-icon>lock_open</mat-icon>
+          <h2 class="mat-h2">Open data</h2>
+        </header>
+        <p>{{'home.about.opendata.c'|translate}}</p>
+      </article>
+
+      <mat-divider></mat-divider>
+
+      <article>
+        <header>
+          <mat-icon>donut_large</mat-icon>
+          <h2 class="mat-h2">Wiki</h2>
+        </header>
+        <p>{{'home.about.wiki.c'|translate}}</p>
+      </article>
+
+      <mat-divider></mat-divider>
+
+      <article>
+        <header>
+          <mat-icon>language</mat-icon>
+          <h2 class="mat-h2">{{'home.about.global.t'|translate}}</h2>
+        </header>
+        <p>{{'home.about.global.c'|translate}}</p>
+      </article>
+    </section>
+  </div>
+
+</div>

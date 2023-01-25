@@ -1,0 +1,40 @@
+<nav class="filters">
+  <div>
+    <div>
+      <mat-form-field [floatLabel]="'never'">
+        <input matInput
+          #filterSearch
+          placeholder="{{'partners.filters.search'|translate}}"
+          [(ngModel)]="filterName"
+          (keyup)="applyFilter($event)"
+          autocomplete="off"
+          (keydown.escape)="filterSearch.blur()">
+        <button
+        mat-button
+        *ngIf="filterName"
+        matSuffix
+        mat-icon-button
+        (click)="filterName='';applyFilter($event)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+</nav>
+
+<div class="content-medium">
+  <table mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>{{'partners.table.name'|translate}}</th>
+      <td mat-cell *matCellDef="let p">{{p.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>{{'partners.table.country'|translate}}</th>
+      <td mat-cell *matCellDef="let p">{{p.country}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/{{currentLang}}/partners/{{row.id}}" class="row-link"></tr>
+  </table>
+</div>

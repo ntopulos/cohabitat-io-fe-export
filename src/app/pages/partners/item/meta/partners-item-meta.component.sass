@@ -1,0 +1,102 @@
+@import 'imports'
+
+$map-height: 400px
+$header-gap: 2rem
+
+
+// nav
+//   display: flex
+//   justify-content: space-between
+
+//   div
+//     display: flex
+//     align-items: center
+
+//   ul
+//     padding: 0
+//     list-style-type: none
+//     display: flex
+//     flex-direction: row
+
+//     li:not(:first-child)
+//       margin-left: 1em
+
+header
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: 'title title' 'description description' 'general links'
+  gap: $header-gap
+  margin-bottom: 2em
+
+  & > div.title
+    grid-area: title
+
+  app-object-image
+    grid-area: illustration
+
+  & > div.general
+    grid-area: general
+
+  & > div.tags
+    grid-area: tags
+
+  & > div.links
+    grid-area: links
+
+  & > div.introduction
+    grid-area: description
+
+.title
+  display: grid
+  gap: 1em
+
+  h1
+    margin: 0
+
+  nav
+    border: 1px $color-grey-border
+    border-style: solid none
+    justify-content: space-between
+    display: flex
+
+    ul
+      padding: 0
+      margin: .25em 0
+      list-style-type: none
+      display: flex
+      flex-direction: row
+
+      li:not(:first-child)
+        margin-left: .5em
+
+    a
+      transform: scale(.9)
+      opacity: .8
+
+    span
+      display: none
+
+      @include respond-to('small')
+        display: inline
+        padding-left: .2em
+
+.introduction
+  font-size: 1.5em
+  font-weight: 300
+
+.general
+  a
+    cursor: pointer
+
+#comments
+  padding: 0 .5em
+
+.tab-content
+  margin-top: 2em
+  margin-bottom: 2em
+
+.map
+  height: $map-height
+
+mat-tab-group
+  min-height: $map-height + 50px

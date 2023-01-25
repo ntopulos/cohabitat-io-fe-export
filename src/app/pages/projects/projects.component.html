@@ -1,0 +1,110 @@
+<nav class="filters">
+  <div>
+    <div class="listFilters">
+      <div class="checkboxFilters">
+        <button
+          mat-stroked-button
+          [ngClass]="{'tagsFilterButtonActive': filterTagsPreviousValue !== ''}"
+          [matMenuTriggerFor]="tagsFilter"
+          #tagsFiltersTrigger="matMenuTrigger">
+          Tags
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #tagsFilter="matMenu" class="projectsTagsFilters">
+          <form (click)="stopPropagation($event)" (ngSubmit)="submitTagsFilter()">
+            <formly-form
+              [model]="filterTagsFormValues"
+              [fields]="filterTagsFormFields"
+              [form]="filterTagsForm"></formly-form>
+            <app-button-spinner
+              [title]="'projects.filters.filter'|translate"
+              [spinning]="false">
+            </app-button-spinner>
+          </form>
+        </mat-menu>
+        <button
+          mat-stroked-button
+          [matMenuTriggerFor]="countriesFilter"
+          #countriesFiltersTrigger="matMenuTrigger">
+          Country
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+      <div>
+        <mat-form-field [floatLabel]="'never'" class="search">
+          <input matInput
+            #filterSearch
+            placeholder="{{'projects.filters.search'|translate}}"
+            [(ngModel)]="filterName"
+            autocomplete="off"
+            (keydown.escape)="filterSearch.blur()">
+          <button
+          mat-button
+          *ngIf="filterName"
+          matSuffix
+          mat-icon-button
+          (click)="filterName=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="mapFilters">
+      <mat-checkbox
+        [(ngModel)]="mapSync"
+        (change)="setFilteredProjects()">
+        {{'projects.map.search-move'|translate}}
+      </mat-checkbox>
+      <span *ngIf="filteredProjects" matTooltip="Visible projects in the area.">{{filteredProjects?.length}}</span>
+    </div>
+  </div>
+</nav>
+
+
+<div class="loading-overlay" *ngIf="loading">
+  <mat-spinner color="accent" diameter="40"></mat-spinner>
+</div>
+
+
+<div id="objects-layout">
+
+  <div id="objects-container">
+    <div *ngFor="let project of filteredProjects | filterProjects:filterName">
+      <a [routerLink]="'/projects/' + project.id | localize">
+        <mat-card
+        id="project-{{project.id}}"
+        [ngClass]="{'outlined': project.id === outlinedProjectId}"
+        (mouseover)="outlineProjectOnMap(project.id)"
+        (mouseout)="outlineProjectOnMap(null)"
+        class="mat-elevation-z0">
+          <app-objects-image [relationships]="project.relationships" [included]="included"></app-objects-image>
+          <mat-card-title>
+            <mat-card-title>{{project.attributes.name}}</mat-card-title>
+            <mat-card-subtitle>{{project.attributes.status}}</mat-card-subtitle>
+          </mat-card-title>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+
+  <div id="map-container">
+    <div
+      leaflet
+      id="map"
+      [leafletOptions]="options"
+      [leafletBaseLayers]="baseLayers"
+      (leafletMapReady)="onMapReady($event)"
+      (leafletMapMoveEnd)="onMapMoveEnd()"
+
+      [leafletMarkerCluster]="markerClusterData"
+      [leafletMarkerClusterOptions]="markerClusterOptions"
+      (leafletMarkerClusterReady)="markerClusterReady($event)">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="object-drawer">
+  <app-object-drawer [project]="projectInDrawer" [included]="included"></app-object-drawer>
+</div>

@@ -1,0 +1,16 @@
+<app-navigation>
+  <div *ngIf="pageLoading" class="loading">
+    <mat-spinner color="accent" diameter="40"></mat-spinner>
+  </div>
+  <router-outlet *ngIf="!pageLoading"></router-outlet>
+  <footer id="root-footer">
+    <ul>
+      <li><a target="_blank" href="https://forum.cohabitat.io/">Forum</a></li>
+      <li><a target="_blank" href="https://datastudio.google.com/open/1lNByw9GcNoh2os7VUTsfihp2DOA2X8Yh">Statistics</a></li>
+      <li><a target="_blank" href="https://dev.cohabitat.io/">Development</a></li>
+    </ul>
+    <div>
+      v{{appVersion}}
+    </div>
+  </footer>
+</app-navigation>

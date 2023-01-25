@@ -1,0 +1,24 @@
+<ul>
+  <li *ngFor="let video of videos">
+    <ng-container *ngIf="video.type === 'youtube'">
+      <div>
+        <iframe
+          [src]="video.url | safe"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="video.type === 'vimeo'">
+      <div>
+        <iframe
+        [src]="video.url | safe"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+        ></iframe>
+      </div>
+    </ng-container>
+  </li>
+</ul>

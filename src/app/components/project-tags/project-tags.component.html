@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let g of groups">
+    <h5>{{g.details[0].name}}</h5>
+    <p class="mat-caption">{{g.details[0].description}}</p>
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let t of g.tags"
+        matTooltip="{{t.details[0].description}}">
+        {{t.details[0].name}}
+      </mat-chip>
+    </mat-chip-list>
+  </li>
+</ul>

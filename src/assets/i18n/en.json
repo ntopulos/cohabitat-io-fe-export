@@ -1,0 +1,319 @@
+{
+  "g": {
+    "404": {
+      "title": "Page not found",
+      "explanation": "We are sorry, the requested page could not be found."
+    },
+    "action": {
+      "close": "Close",
+      "load-more": "Load more",
+      "learn-more": "Learn more"
+    },
+    "feature-not-available": "This feature is not yet available."
+  },
+  "form": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "delete": "Delete",
+    "publish": "Publish",
+    "save": "Save",
+    "invalid-msg": "The form must be complete and valid.",
+    "localized": {
+      "1": "This content is localized, you are currently editing the English version.",
+      "2": "To edit another version, please switch the language in the menu."
+    }
+  },
+  "about": {
+    "title": "About"
+  },
+  "legal": {
+    "tos": {
+      "title": "Terms of Service"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
+  },
+  "home": {
+    "title": "Home",
+    "about": {
+      "opendata": {
+        "c": "Most of the content is under open data licence, freely available for anyone to use, edit and republish."
+      },
+      "wiki": {
+        "c": "The community of users collaborates to create and publish content and to enrich knowledge on community-led housing."
+      },
+      "global": {
+        "t": "Global",
+        "c": "The database showcases housing projects and partner organisations from around the world."
+      }
+    },
+    "projects": {
+      "t": "Projects",
+      "st": "Housing cooperatives, co-housing, co-living, community land trusts, residents associations...",
+      "c": "Document local housing projects, learn about other initiatives and connect with a broad community of users!",
+      "more": "Browse projects",
+      "add": "Add a project"
+    },
+    "partners": {
+      "t": "Partners",
+      "st": "Associations, federations, housing professionals, NGOs, municipalities, academia, city-wide networks...",
+      "c": "Discover and document the rich ecosystem of partners enabling community-led housing!",
+      "more": "Browse partners",
+      "add": "Add a partner"
+    },
+    "content-subtitle": "Discover and document projects and their partners around the world!",
+    "content-title": "Global database of community-led housing"
+  },
+  "community": {
+    "title": "Community"
+  },
+  "projects": {
+    "title": "Projects",
+    "filters": {
+      "filter": "Filter",
+      "search": "Search"
+    },
+    "map": {
+      "toggle": "Map",
+      "search-move": "Search by moving the map"
+    },
+    "content": {
+      "meta": {
+        "address": "Address",
+        "country": "Country",
+        "links": "Links",
+        "links-additional": "Additional links",
+        "properties": "Properties",
+        "status": "Phase"
+      }
+    },
+    "create": {
+      "title": "New project",
+      "done": {
+        "msg": "The project was successfully created.",
+        "next": {
+          "t": "You can now:",
+          "1": "Visit the project's profile",
+          "2": "Complete the description",
+          "3": "Add pictures"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edit",
+      "link-title": "Edit",
+      "return": "Return to project",
+      "basics": {
+        "title": "Basics"
+      },
+      "properties": {
+        "title": "Properties"
+      },
+      "links": {
+        "title": "Links"
+      },
+      "texts": {
+        "title": "Texts"
+      },
+      "images": {
+        "title": "Images",
+        "add": {
+          "title": "Add an image",
+          "action": "Upload an image",
+          "form": {
+            "1": {
+              "title": "Conditions",
+              "agree": "I understand and agree",
+              "next": "Next"
+            },
+            "2": {
+              "title": "Upload",
+              "type": "Type",
+              "file": {
+                "drag": "Drag a photo file here",
+                "browse": "Browse Files",
+                "constraints": {
+                  "size": "The image size must be between {{min}} and {{max}} pixels."
+                }
+              },
+              "licence": {
+                "t": "Licence",
+                "d": "Licence details"
+              },
+              "source": {
+                "t": "Source",
+                "h": "e.g.:"
+              },
+              "source_url": "Source URL",
+              "author": {
+                "t": "Author",
+                "h": "Person or organisation that created the image. It can be you."
+              },
+              "description": {
+                "t": "Description",
+                "h": "Describe the content of the image and give the date it was taken."
+              },
+              "action": "Upload",
+              "back": "Back"
+            },
+            "3": {
+              "title": "Done",
+              "close": "Close"
+            }
+          }
+        },
+        "manage": {
+          "title": "Manage",
+          "drag-to-reorder": "Drag and drop to reorder:",
+          "reorder-action": "Save order",
+          "make-main": "Make main",
+          "file": {
+            "id": "File ID",
+            "dimensions": "Dimensions",
+            "author": "Author",
+            "source": "Source",
+            "source-url": "Source URL"
+          }
+        }
+      },
+      "videos": {
+        "title": "Videos"
+      }
+    },
+    "revisions": {
+      "title": "Revision history",
+      "link-title": "History",
+      "columns": {
+        "date": "Date",
+        "author": "Author",
+        "description": "Description"
+      },
+      "archive-msg": {
+        "l1": {
+          "1": "You are seeing an ",
+          "2": "archived revision",
+          "3": ", the current state of this page ",
+          "4": "is available here"
+        },
+        "l2": "For the moment, only partial views of revision are available: the short description and the article are complete, but the remaining information is not."
+      }
+    }
+  },
+  "partners": {
+    "title": "Partners",
+    "filters": {
+      "search": "Search"
+    },
+    "table": {
+      "name": "Name",
+      "country": "Country"
+    },
+    "create": {
+      "title": "New partner",
+      "marker-msg": "Position the marker on the location of the partner:",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "done": {
+        "msg": "The partner was successfully created.",
+        "next": {
+          "t": "You can now:",
+          "1": "Visit the partner's profile",
+          "2": "Complete the description"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edit",
+      "link-title": "Edit",
+      "return": "Return to partner",
+      "basics": {
+        "title": "Basics"
+      },
+      "links": {
+        "title": "Links"
+      },
+      "texts": {
+        "title": "Texts"
+      },
+      "videos": {
+        "title": "Videos"
+      },
+      "partnerships": {
+        "title": "Partnerships"
+      }
+    }
+  },
+  "object": {
+    "article": "Article",
+    "partnerships": "Partnerships",
+    "map": "Map",
+    "images": "Images",
+    "videos": "Videos",
+    "return-to-list": "Return to the list",
+    "edit": {
+      "location": {
+        "title": "Location",
+        "introduction": "Use the search engine or position the marker directly by moving the map.",
+        "latitude": "Latitude",
+        "longitude": "Longitude"
+      }
+    }
+  },
+  "account": {
+    "title": "My Account"
+  },
+  "authentication": {
+    "action": {
+      "login": "Login",
+      "log-out": "Log out"
+    },
+    "login": {
+      "title": "Log in",
+      "form": {
+        "email": "Email",
+        "password": "Password",
+        "button": "Log in"
+      },
+      "password-forgotten": "Forgot your password?",
+      "not-registered": {
+        "sentence": "Not registered yet?",
+        "action": "Join"
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "form": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "button": "Sign up"
+      },
+      "terms": {
+        "1": "By clicking “{{value}}”, you agree to our",
+        "2": "and our"
+      },
+      "already": "Already have an account?",
+      "email_sent": "One last step: please click the link sent to you by email to activate your account."
+    },
+    "password-reset": {
+      "title": "Password reset",
+      "form": {
+        "token": {
+          "button": "Recover password",
+          "success": "Recovery instructions have been sent."
+        },
+        "password": {
+          "button": "Set new password",
+          "success": "The new password has been set, please log in."
+        }
+      }
+    }
+  },
+  "comments": {
+    "title": "Comments",
+    "comment": "Comment",
+    "login-to-post": "Log in to post comments"
+  }
+}

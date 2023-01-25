@@ -1,0 +1,319 @@
+{
+  "g": {
+    "404": {
+      "title": "Page introuvable",
+      "explanation": "Nous sommes désolés, la page demandée n'a pas pu être trouvée."
+    },
+    "action": {
+      "close": "Fermer",
+      "load-more": "Charger plus",
+      "learn-more": "En savoir plus"
+    },
+    "feature-not-available": "Cette fonction n'est pas encore disponible."
+  },
+  "form": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "create": "Créer",
+    "delete": "Supprimer",
+    "publish": "Publier",
+    "save": "Sauvegarder",
+    "invalid-msg": "Le formulaire doit être complet et valide.",
+    "localized": {
+      "1": "Ce contenu est localisé, vous êtes en train d'éditer la version française.",
+      "2": "Pour éditer une autre version, veuillez changer la langue dans le menu."
+    }
+  },
+  "about": {
+    "title": "À propos"
+  },
+  "legal": {
+    "tos": {
+      "title": "Conditions d'utilisation"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité"
+    }
+  },
+  "home": {
+    "title": "Accueil",
+    "about": {
+      "opendata": {
+        "c" : "La plupart du contenu est sous licence libre : gratuitement disponible pour tous, il peut être edité et republié."
+      },
+      "wiki": {
+        "c": "La communauté des utilisateurs collabore pour créer et publier du contenu et pour enrichir les connaissances sur l'habitat collaboratif."
+      },
+      "global": {
+        "t": "Global",
+        "c": "La base de données présente des projets et des partenaires du monde entier."
+      }
+    },
+    "projects": {
+      "t": "Projets",
+      "st": "Coopératives d'habitation, co-housing, co-living, community land trusts, associations de résidents...",
+      "c": "Documentez les projets de logement locaux, découvrez d'autres initiatives et entrez en contact avec une large communauté d'utilisateurs !",
+      "more": "Parcourir les projets",
+      "add": "Ajouter un projet"
+    },
+    "partners": {
+      "t": "Partenaires",
+      "st": "Associations, fédérations, professionnels du logement, ONGs, municipalités, acteurs académiques, city-wide networks...",
+      "c": "Découvrez et documentez le riche écosystème de partenaires permettant la construction de logements communautaires !",
+      "more": "Parcourir les partenaires",
+      "add": "Ajouter un partenaire"
+    },
+    "content-subtitle": "Découvrez et documentez les projets et leurs partenaires dans le monde entier !",
+    "content-title": "Base de données mondiale de l'habitat collaboratif"
+  },
+  "community": {
+    "title": "Communauté"
+  },
+  "projects": {
+    "title": "Projets",
+    "filters": {
+      "filter": "Filtrer",
+      "search": "Rechercher"
+    },
+    "map": {
+      "toggle": "Carte",
+      "search-move": "Rechercher en déplaçant la carte"
+    },
+    "content": {
+      "meta": {
+        "address": "Adresse",
+        "country": "Pays",
+        "links": "Liens",
+        "links-additional": "Liens supplémentaires",
+        "properties": "Propriétés",
+        "status": "Phase"
+      }
+    },
+    "create": {
+      "title": "Nouveau projet",
+      "done": {
+        "msg": "Le projet a été créé avec succès.",
+        "next": {
+          "t": "Vous pouvez maintenant :",
+          "1": "Visiter le profil du projet",
+          "2": "Compléter la description",
+          "3": "Ajouter des photos"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edition",
+      "link-title": "Editer",
+      "return": "Retourner au projet",
+      "basics": {
+        "title": "Informations de base"
+      },
+      "properties": {
+        "title": "Propriétés"
+      },
+      "links": {
+        "title": "Liens"
+      },
+      "texts": {
+        "title": "Textes"
+      },
+      "images": {
+        "title": "Images",
+        "add": {
+          "title": "Ajouter une image",
+          "action": "Téléverser une image",
+          "form": {
+            "1": {
+              "title": "Conditions",
+              "agree": "Je comprends et j'accepte",
+              "next": "Suivant"
+            },
+            "2": {
+              "title": "Téléverser",
+              "type": "Type",
+              "file": {
+                "drag": "Faites glisser un fichier photo ici",
+                "browse": "Parcourir les fichiers",
+                "constraints": {
+                  "size": "La taille de l'image doit être comprise entre {{min}} et {{max}} pixels."
+                }
+              },
+              "licence": {
+                "t": "Licence",
+                "d": "Détails de la licence"
+              },
+              "source": {
+                "t": "Source",
+                "h": "e.g.:"
+              },
+              "source_url": "URL de la source",
+              "author": {
+                "t": "Auteur",
+                "h": "Personne ou organisation qui a créé l'image. Il peut s'agir de vous."
+              },
+              "description": {
+                "t": "Description",
+                "h": "Décrivez le contenu de l'image et indiquez la date à laquelle elle a été prise."
+              },
+              "action": "Téléverser",
+              "back": "Retour"
+            },
+            "3": {
+              "title": "Terminé",
+              "close": "Fermer"
+            }
+          }
+        },
+        "manage": {
+          "title": "Gérer",
+          "drag-to-reorder": "Glisser-déposer pour réorganiser :",
+          "reorder-action": "Sauvegarder l'ordre",
+          "make-main": "Rendre principale",
+          "file": {
+            "id": "ID fichier",
+            "dimensions": "Dimensions",
+            "author": "Auteur",
+            "source": "Source",
+            "source-url": "URL de la source"
+          }
+        }
+      },
+      "videos": {
+        "title": "Vidéos"
+      }
+    },
+    "revisions": {
+      "title": "Historique des révisions",
+      "link-title": "Historique",
+      "columns": {
+        "date": "Date",
+        "author": "Auteur",
+        "description": "Description"
+      },
+      "archive-msg": {
+        "l1": {
+          "1": "Vous voyez une ",
+          "2": "version archivée",
+          "3": ", l'état actuelle de la page ",
+          "4": "est disponible ici"
+        },
+        "l2": "Pour le moment, seules des vues partielles des versions archivées sont disponibles : la courte description et l'article sont complets, mais le reste des informations ne l'est pas."
+      }
+    }
+  },
+  "partners": {
+    "title": "Partenaires",
+    "filters": {
+      "search": "Rechercher"
+    },
+    "table": {
+      "name": "Nom",
+      "country": "Pays"
+    },
+    "create": {
+      "title": "Nouveau partenaire",
+      "marker-msg": "Positionnez le marqueur sur l'emplacement du partenaire :",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "done": {
+        "msg": "Le partenaire a été créé avec succès.",
+        "next": {
+          "t": "Vous pouvez maintenant :",
+          "1": "Visiter le profil du partenaire",
+          "2": "Compléter la description"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edition",
+      "link-title": "Editer",
+      "return": "Retourner au partenaire",
+      "basics": {
+        "title": "Informations de base"
+      },
+      "properties": {
+        "title": "Propriétés"
+      },
+      "links": {
+        "title": "Liens"
+      },
+      "texts": {
+        "title": "Textes"
+      },
+      "partnerships": {
+        "title": "Partenariats"
+      }
+    }
+  },
+  "object": {
+    "article": "Article",
+    "partnerships": "Partenariats",
+    "map": "Carte",
+    "images": "Images",
+    "videos": "Vidéos",
+    "return-to-list": "Retourner à la liste",
+    "edit": {
+      "location": {
+        "title": "Localisation",
+        "introduction": "Utilisez le moteur de recherche ou positionnez directement le marqueur en déplaçant la carte.",
+        "latitude": "Latitude",
+        "longitude": "Longitude"
+      }
+    }
+  },
+  "account": {
+    "title": "Mon compte"
+  },
+  "authentication": {
+    "action": {
+      "login": "Connexion",
+      "log-out": "Se déconnecter"
+    },
+    "login": {
+      "title": "Connexion",
+      "form": {
+        "email": "Email",
+        "password": "Mot de passe",
+        "button": "Se connecter"
+      },
+      "password-forgotten": "Mot de passe oublié?",
+      "not-registered": {
+        "sentence": "Pas encore inscrit ?",
+        "action": "Créer un compte"
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "form": {
+        "username": "Nom d'utilisateur",
+        "email": "Email",
+        "password": "Mot de passe",
+        "button": "Créer"
+      },
+      "terms": {
+        "1": "En cliquant sur “{{value}}”, vous acceptez nos",
+        "2": "et notre"
+      },
+      "already": "Vous avez déjà un compte ?",
+      "email_sent": "Une dernière étape : veuillez cliquer sur le lien qui vous a été envoyé par e-mail pour activer votre compte."
+    },
+    "password-reset": {
+      "title": "Réinitialisation du mot de passe",
+      "form": {
+        "token": {
+          "button": "Récupérer le mot de passe",
+          "success": "Les instructions de récupération ont été envoyées."
+        },
+        "password": {
+          "button": "Définir le nouveau mot de passe",
+          "success": "Le nouveau mot de passe a été enregistré, vous pouvez vous connecter."
+        }
+      }
+    }
+  },
+  "comments": {
+    "title": "Commentaires",
+    "comment": "Commentaire",
+    "login-to-post": "Connectez-vous pour poster des commentaires"
+  }
+}

@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="style">
+  <button *ngSwitchDefault mat-flat-button [color]="color" [disabled]="disabled || spinning">
+    {{title}}
+    <mat-icon *ngIf="spinning"><mat-spinner color="primary" diameter="20">
+    </mat-spinner></mat-icon>
+  </button>
+  <button *ngSwitchCase="'stroked'" mat-stroked-button [color]="color" [disabled]="disabled || spinning">
+    {{title}}
+    <mat-icon *ngIf="spinning"><mat-spinner color="primary" diameter="20">
+    </mat-spinner></mat-icon>
+  </button>
+</ng-container>

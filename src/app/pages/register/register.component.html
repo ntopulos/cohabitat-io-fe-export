@@ -1,0 +1,29 @@
+<h1>{{ 'authentication.register.title' | translate }}</h1>
+
+<div *ngIf="!formStatus.success">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <formly-form
+      [model]="formValues"
+      [fields]="fields"
+      [form]="form"></formly-form>
+    <app-button-spinner
+      [title]="'authentication.register.form.button'|translate"
+      [spinning]="formStatus.submitting">
+    </app-button-spinner>
+    <p>
+      {{'authentication.register.terms.1'|translate:register}}
+      <a [routerLink]="'/legal/terms-of-service'|localize">{{'legal.tos.title'|translate|lowercase}}</a>
+      {{'authentication.register.terms.2'|translate}}
+      <a [routerLink]="'/legal/privacy-policy'|localize">{{'legal.privacy.title'|translate|lowercase}}</a>.
+    </p>
+  </form>
+
+  <div>
+    <p>{{'authentication.register.already'|translate}} <a [routerLink]="'/login' | localize">{{'authentication.login.form.button'|translate}}</a></p>
+  </div>
+</div>
+
+<div *ngIf="formStatus.success">
+  <app-notification [notification]="'authentication.register.email_sent'|translate"></app-notification>
+</div>

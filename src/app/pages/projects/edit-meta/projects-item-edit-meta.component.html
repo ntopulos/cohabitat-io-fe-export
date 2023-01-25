@@ -1,0 +1,30 @@
+<form *ngIf="!projectCreated" id="create-form" (ngSubmit)="submit()">
+  <formly-form
+    [model]="formValues"
+    [fields]="fields"
+    [form]="form"></formly-form>
+
+  <div>
+    <app-object-location
+      [(formValues)]="formValues"
+      [object]="project"
+      (mapMoved)="mapMoved($event)"></app-object-location>
+  </div>
+
+  <div>
+    <app-button-spinner
+      [title]="(project ? 'form.save' : 'form.create') | translate"
+      [spinning]="formStatus.submitting">
+    </app-button-spinner>
+  </div>
+</form>
+
+<div *ngIf="projectCreated" id="project-created">
+  <p>{{'projects.create.done.msg'|translate}}</p>
+  <p>{{'projects.create.done.next.t'|translate}}</p>
+  <ul>
+    <li><a [routerLink]="'/projects/'+projectCreated.id|localize">{{'projects.create.done.next.1'|translate}}</a></li>
+    <li><a [routerLink]="'/projects/'+projectCreated.id+'/edit/basics'|localize">{{'projects.create.done.next.2'|translate}}</a></li>
+    <li><a [routerLink]="'/projects/'+projectCreated.id+'/edit/images'|localize">{{'projects.create.done.next.3'|translate}}</a></li>
+  </ul>
+</div>

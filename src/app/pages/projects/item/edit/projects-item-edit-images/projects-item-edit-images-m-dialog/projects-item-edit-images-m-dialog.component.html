@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{'projects.edit.images.manage.make-main'|translate}}</h1>
+
+<div mat-dialog-content>
+
+  <p class="mat-body-1">File id:<br>{{data.file.file.id}}</p>
+
+  <app-button-spinner
+    (click)="submit()"
+    [title]="'form.confirm'|translate"
+    [color]="'default'"
+    [spinning]="formStatus.submitting">
+  </app-button-spinner>
+  <button type="button" mat-button (click)="closeDialog()">{{'form.cancel'|translate}}</button>
+
+</div>

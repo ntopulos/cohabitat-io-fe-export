@@ -1,0 +1,60 @@
+@import 'imports'
+
+:host
+  display: grid
+  gap: 2em
+  grid-template-columns: 1fr 2fr
+  grid-template-areas: "header header""projects-partners projects-partners" "about about"
+
+  @include respond-to('medium')
+    grid-template-areas: "header header" "about projects-partners" "about projects-partners"
+
+
+:host > header div
+  display: flex
+  flex-direction: row-reverse
+
+:host > header,
+section
+  padding: 2em
+  box-sizing: border-box
+
+section
+  & > *:first-child
+    margin-top: 0
+
+.projects,
+.partners
+  border: 1px solid $color-grey-border
+
+  a
+    margin-right: 1em
+
+:host > header
+  grid-area: header
+  background-color: $color-theme-primary
+  color: white
+
+
+.projects-partners
+  grid-area: projects-partners
+
+  & > div
+    display: grid
+    gap: 2em
+
+.about
+  grid-area: about
+  text-align: center
+
+  & > div
+    background-color: $color-grey-background
+
+  article p
+    margin-bottom: 0
+
+  article:not(:first-child)
+    margin-top: 2em
+
+  article:not(:last-child)
+    margin-bottom: 2em

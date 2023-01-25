@@ -1,0 +1,7 @@
+<div *ngIf="images">
+  <div *ngFor="let image of images">
+    <a [href]="image.attributes.urls.large" target="_blank">
+      <img [src]="image.attributes.urls.thumbnail_square">
+    </a>
+  </div>
+</div>

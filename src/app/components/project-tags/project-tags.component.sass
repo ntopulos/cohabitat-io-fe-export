@@ -1,0 +1,60 @@
+@import 'imports'
+
+h5
+  margin: 0
+
+p
+  margin-top: 0
+
+ul
+  list-style-type: none
+  padding: 0
+  display: grid
+
+li
+  padding: 1em
+  border-width: 1px
+  border-color: $color-grey-border
+  border-style: none none solid
+
+
+@include respond-to('small-medium')
+  ul
+    grid-template-columns: repeat(2,1fr)
+
+  li
+    border-color: transparent $color-grey-border $color-grey-border transparent
+    border-style: none solid solid solid
+
+    &:nth-of-type(2n+2)
+      border-right-color: transparent
+
+    $first-child-in-any-row: ":nth-child(2n+1)"
+    $any-child-in-the-last-row: ":nth-last-child(-n+2)"
+    $first-child-in-last-row: "&#{$first-child-in-any-row}#{$any-child-in-the-last-row}"
+
+    #{$first-child-in-last-row},
+    #{$first-child-in-last-row} ~ &
+      border-bottom-color: transparent
+
+@include respond-to('medium')
+  ul
+    grid-template-columns: repeat(3,1fr)
+
+  li
+    border-color: transparent $color-grey-border $color-grey-border transparent
+    border-style: none solid solid solid
+
+    &:nth-of-type(3n+3)
+      border-right-color: transparent
+
+    $first-child-in-any-row: ":nth-child(3n+1)"
+    $any-child-in-the-last-row: ":nth-last-child(-n+3)"
+    $first-child-in-last-row: "&#{$first-child-in-any-row}#{$any-child-in-the-last-row}"
+
+    #{$first-child-in-last-row},
+    #{$first-child-in-last-row} ~ &
+      border-bottom-color: transparent
+
+    &:first-child:last-child
+      border-color: transparent

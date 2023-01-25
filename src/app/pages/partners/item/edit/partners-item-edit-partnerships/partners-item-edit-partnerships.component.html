@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="partnership-edit">
+  <formly-form
+    [model]="formValues"
+    [fields]="fields"
+    [form]="form"></formly-form>
+  <app-button-spinner
+    [title]="'form.save'|translate"
+    [spinning]="formStatus.submitting">
+  </app-button-spinner>
+</form>

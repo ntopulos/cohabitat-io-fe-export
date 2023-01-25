@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{'form.delete'|translate}}</h1>
+
+<div mat-dialog-content>
+  <p class="mat-body-1">{{'projects.edit.images.manage.file.id'|translate}}:<br>{{data.file.file.id}}</p>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <formly-form
+      [model]="formValues"
+      [fields]="fields"
+      [form]="form"></formly-form>
+    <app-button-spinner
+      [title]="'form.confirm'|translate"
+      [color]="'warn'"
+      [spinning]="formStatus.submitting">
+    </app-button-spinner>
+    <button type="button" mat-button (click)="closeDialog()">{{'form.cancel'|translate}}</button>
+  </form>
+</div>

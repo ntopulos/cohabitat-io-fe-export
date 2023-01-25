@@ -1,0 +1,107 @@
+@import 'imports'
+
+$logo-width: 200px
+
+// Fixes map issues when resizing window
+.sidenav-container
+  height: 100%
+
+.sidenav
+  width: 300px
+
+.mat-toolbar
+  position: sticky
+  top: 0
+  z-index: 1010
+
+// Fixes sticky map not working in navigation ng-content
+.mat-drawer-container,
+.mat-drawer-content
+  overflow: visible
+  background-color: #fff
+  min-height: 100vh
+  box-sizing: border-box
+
+.mat-drawer-content
+  padding-bottom: $app-footer-height
+
+#logo
+ font-size: 1em
+
+// TODO: register icon as mat-icon
+svg
+  fill: #fff
+
+mat-toolbar-row
+  display: grid
+  grid-template-columns: $logo-width auto
+
+  // last visible element alignement
+  & > div:nth-child(3),
+  & > div:last-child
+      text-align: right
+
+  // hide on small
+  & > div:nth-child(2),
+  & > div:nth-child(3)
+    display: none
+
+  @include respond-to('medium')
+    grid-template-columns: $logo-width auto auto
+
+    // show
+    & > div:nth-child(2),
+    & > div:nth-child(3)
+      display: block
+
+    & > div:last-child
+      display: none
+
+// icons
+mat-icon:not(:last-child)
+  margin-right: .25em
+
+mat-icon:last-child
+  margin-left: .25em
+
+#nav-languages
+  margin-right: 1em
+
+mat-toolbar-row div:nth-child(2)
+  display: none
+
+  @include respond-to('medium')
+    display: block
+
+
+.hidden
+  display: none
+
+
+// mobile drawer
+.sidenav
+  background-color: $color-theme-primary
+  color: white
+
+  .mat-list-item
+    color: white
+
+  .mat-nav-list
+    padding: 0
+    border-top: 1px solid rgba(0,0,0,.1)
+
+  .languages
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    border-top: 1px solid rgba(0,0,0,.1)
+
+.sidenav-head
+  height: $app-bar-height
+  box-sizing: border-box
+  border-bottom: 1px solid rgba(0,0,0,.1)
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  padding: 0 1em

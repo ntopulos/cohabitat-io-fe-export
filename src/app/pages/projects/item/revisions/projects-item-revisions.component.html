@@ -1,0 +1,31 @@
+<nav class="breadcrumb mat-body">
+  <ol>
+    <li><a [routerLink]="'/projects'|localize">{{'projects.title'|translate}}</a></li>
+    <li><a [routerLink]="'/projects/' + project.id | localize">{{project.attributes.name}}</a></li>
+    <li>{{'projects.revisions.title'|translate}}</li>
+  </ol>
+</nav>
+
+<table mat-table [dataSource]="revisions">
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef>{{'projects.revisions.columns.date'|translate}}</th>
+    <td mat-cell *matCellDef="let e">
+      <a [routerLink]="'/projects/'+project.id+'/revisions/'+e.id|localize">
+        {{e.date}} UTC
+      </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef>{{'projects.revisions.columns.author'|translate}}</th>
+    <td mat-cell *matCellDef="let e">{{e.user.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>{{'projects.revisions.columns.description'|translate}}</th>
+    <td mat-cell *matCellDef="let e">{{e.description}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

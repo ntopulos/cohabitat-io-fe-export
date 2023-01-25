@@ -1,0 +1,316 @@
+{
+  "g": {
+    "404": {
+      "title": "Página no encontrada",
+      "explanation": "Lo sentimos, no pudimos encontrar la página que buscas."
+    },
+    "action": {
+      "load-more": "Leer más",
+      "learn-more": "Más información"
+    },
+    "feature-not-available": "Por el momento, esta función no está disponible."
+  },
+  "form": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "publish": "Publicar",
+    "save": "Guardar",
+    "invalid-msg": "El formulario debe ser completo y válido.",
+    "localized": {
+      "1": "Este contenido está localizado, actualmente está editando la versión en español.",
+      "2": "Para editar otra versión, por favor cambie el idioma en el menú."
+    }
+  },
+  "about": {
+    "title": "Acerca de"
+  },
+  "legal": {
+    "tos": {
+      "title": "Términos de servicio"
+    },
+    "privacy": {
+      "title": "Política de Privacidad"
+    }
+  },
+  "home": {
+    "title": "Inicio",
+    "about": {
+      "opendata": {
+        "c": "La mayor parte de este contenido se encuentra bajo licencia abierta, de libre aceso para que todos puedan utilizarlo, editarlo y volver a publicarlo."
+      },
+      "wiki": {
+        "c": "La comunidad de usuarios colabora en la creación y publicación de contenidos y en el enriquecimiento de los conocimientos sobre el hábitat participativo."
+      },
+      "global": {
+        "t": "Global",
+        "c": "Esta base de datos contiene proyectos de hábitat así como organizaciones asociadas de todo el mundo."
+      }
+    },
+    "projects": {
+      "t": "Proyectos",
+      "st": "Cooperativas de vivienda, co-vivienda, convivencia, community land trusts, federaciones de habitantes...",
+      "c": "¡Documente proyectos de vivienda locales, conozca otras iniciativas y conéctese con una amplia comunidad de usuarios!",
+      "more": "Navegue por los proyectos",
+      "add": "Añadir un proyecto"
+    },
+    "partners": {
+      "t": "Socios",
+      "st": "Asociaciones, federaciones, profesionales del hábitat, ONGs, municipalidades, academia, redes de ciudades...",
+      "c": "¡Descubre y documenta el entramado de aliados en apoyo al hábitat participativo!",
+      "more": "Navegue por los aliados",
+      "add": "Añadir un aliado"
+    },
+    "content-subtitle": "¡Descubre y documenta proyectos y sus aliados en todo el mundo!",
+    "content-title": "Base de datos global del hábitat participativo",
+    "more": {
+      "statistics": "Estadísticas de visitas"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "filters": {
+      "search": "Busca en"
+    },
+    "map": {
+      "toggle": "Mapa",
+      "search-move": "Busque moviendo el mapa"
+    },
+    "content": {
+      "meta": {
+        "address": "Dirección",
+        "country": "País",
+        "links": "Enlaces",
+        "links-additional": "Enlaces adicionales",
+        "properties": "Propriedades",
+        "status": "Fase"
+      }
+    },
+    "create": {
+      "title": "Nuevo proyecto",
+      "done": {
+        "msg": "El proyecto fue creado con éxito.",
+        "next": {
+          "t": "Ahora puede",
+          "1": "Visitar el perfil del proyecto",
+          "2": "Completar la descripción",
+          "3": "Añadir fotos"
+        }
+      }
+    },
+    "edit": {
+      "title": "Editar",
+      "link-title": "Editar",
+      "return": "Volver al proyecto",
+      "basics": {
+        "title": "Bases"
+      },
+      "properties": {
+        "title": "Propriedades"
+      },
+      "links": {
+        "title": "Enlaces"
+      },
+      "texts": {
+        "title": "Textos"
+      },
+      "images": {
+        "title": "Imágenes",
+        "add": {
+          "title": "Añadir una imagen",
+          "action": "Subir una imagen",
+          "form": {
+            "1": {
+              "title": "Condiciones",
+              "agree": "Entiendo y acepto",
+              "next": "Seguiente"
+            },
+            "2": {
+              "title": "Subir",
+              "type": "Tipo",
+              "file": {
+                "drag": "Arrastra un archivo de foto aquí",
+                "browse": "Búsqueda de archivos",
+                "constraints": {
+                  "size": "El tamaño de la imagen debe estar entre {{min}} y {{max}} píxeles."
+                }
+              },
+              "licence": {
+                "t": "Licencia",
+                "d": "Detalles de la licencia"
+              },
+              "source": {
+                "t": "Fuente",
+                "h": "p. ej.:"
+              },
+              "source_url": "Fuente URL",
+              "author": {
+                "t": "Autor",
+                "h": "Persona u organización que creó la imagen. Puedes ser tú."
+              },
+              "description": {
+                "t": "Descripción",
+                "h": "Describa el contenido de la imagen y indique la fecha en que fue tomada."
+              },
+              "action": "Subir",
+              "back": "Atrás"
+            },
+            "3": {
+              "title": "Terminado",
+              "close": "Cerrar"
+            }
+          }
+        },
+        "manage": {
+          "title": "Administrar",
+          "drag-to-reorder": "Arrastra y suelta para reordenar:",
+          "reorder-action": "Guardar orden",
+          "make-main": "Hacer principal",
+          "file": {
+            "id": "Archivo ID",
+            "dimensions": "Dimensiones",
+            "author": "Autor",
+            "source": "Fuente",
+            "source-url": "Fuente URL"
+          }
+        }
+      },
+      "videos": {
+        "title": "Vídeos"
+      }
+    },
+    "revisions": {
+      "title": "Historial de revisión",
+      "link-title": "Historial",
+      "columns": {
+        "date": "Fecha",
+        "author": "Autor",
+        "description": "Descripción"
+      },
+      "archive-msg": {
+        "l1": {
+          "1": "Esta es una ",
+          "2": "versión antigua",
+          "3": ", el estado actual de esta página ",
+          "4": "está disponible aquí"
+        },
+        "l2": "Por el momento, sólo están disponibles vistas parciales de la revisión: la breve descripción y el artículo están completos, pero la información restante no lo está."
+      }
+    }
+  },
+  "partners": {
+    "title": "Aliados",
+    "filters": {
+      "search": "Busca en"
+    },
+    "table": {
+      "name": "Nombre ",
+      "country": "País"
+    },
+    "create": {
+      "title": "Nuevo aliado",
+      "marker-msg": "Posicione el marcador en la ubicación del aliado:",
+      "latitude": "Latitud",
+      "longitude": "Longitud",
+      "done": {
+        "msg": "El aliado fue creado con éxito.",
+        "next": {
+          "t": "Ahora puede:",
+          "1": "Visitar el perfil del aliado",
+          "2": "Completar la descripción"
+        }
+      }
+    },
+    "edit": {
+      "title": "Editar",
+      "link-title": "Editar",
+      "return": "Volver al aliado",
+      "basics": {
+        "title": "Bases"
+      },
+      "links": {
+        "title": "Enlaces"
+      },
+      "texts": {
+        "title": "Textos"
+      },
+      "videos": {
+        "title": "Vídeos"
+      },
+      "partnerships": {
+        "title": "Asociación"
+      }
+    }
+  },
+  "object": {
+    "article": "Artículo",
+    "map": "Mapa",
+    "images": "Imágenes",
+    "videos": "Vídeos",
+    "return-to-list": "Volver a la lista",
+    "edit": {
+      "location": {
+        "title": "Localización",
+        "introduction": "Utiliza el motor de búsqueda o posiciona el marcador directamente moviendo el mapa.",
+        "latitude": "Latitud",
+        "longitude": "Longitud"
+      }
+    }
+  },
+  "account": {
+    "title": "Mi Cuenta"
+  },
+  "authentication": {
+    "action": {
+      "login": "Iniciar sesión",
+      "log-out": "Salir"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "form": {
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "button": "Iniciar sesión"
+      },
+      "password-forgotten": "¿Olvidaste tu contraseña?",
+      "not-registered": {
+        "sentence": "¿No tienes una cuenta aún?",
+        "action": "Unirse"
+      }
+    },
+    "register": {
+      "title": "Crear una cuenta",
+      "form": {
+        "username": "Nombre de usuario",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "button": "Registrarte"
+      },
+      "terms": {
+        "1": "Al hacer clic en “{{value}}”, aceptas nuestros",
+        "2": "y nuestras"
+      },
+      "already": "¿Tienes cuenta?",
+      "email_sent": "Un último paso: por favor, haz clic en el enlace que te enviamos por correo electrónico para activar tu cuenta."
+    },
+    "password-reset": {
+      "title": "Restablecer la contraseña",
+      "form": {
+        "token": {
+          "button": "Recuperar la contraseña",
+          "success": "Las instrucciones de recuperación han sido enviadas."
+        },
+        "password": {
+          "button": "Establecer nueva contraseña",
+          "success": "La nueva contraseña ha sido establecida, por favor, inicie sesión."
+        }
+      }
+    }
+  },
+  "comments": {
+    "title": "Comentarios",
+    "comment": "Comentar",
+    "login-to-post": "Inicie sesión para publicar comentarios."
+  }
+}

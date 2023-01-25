@@ -1,0 +1,25 @@
+// Styles are partially defined in main style.css
+@import 'imports'
+
+// form and map
+#create-form
+  display: grid
+  gap: 2em
+
+  @include respond-to('medium')
+    grid-template-columns: 1fr 1fr
+
+button
+  margin-top: 1em
+
+
+#partner-created
+  animation: fadein 2s
+  border-radius: 5px
+  color: white
+  padding: 1em
+  background-color: #399e50
+  color: #fff
+
+  a
+    color: inherit

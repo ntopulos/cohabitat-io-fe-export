@@ -1,0 +1,22 @@
+<table id="project-properties" mat-table *ngIf="properties" [dataSource]="properties">
+  <ng-container matColumnDef="property">
+    <th mat-header-cell *matHeaderCellDef>Property</th>
+    <td mat-cell *matCellDef="let element">
+      <span
+        matTooltip="{{element.descriptions[0].description}}">
+        {{element.descriptions[0].name}}
+      </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef>Value</th>
+    <td mat-cell *matCellDef="let element">
+      {{element.value}}
+      <span *ngIf="element.format.unit_short" matTooltip="{{element.format.unit}}">{{element.format.unit_short}}</span>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

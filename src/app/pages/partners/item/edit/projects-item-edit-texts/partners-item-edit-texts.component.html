@@ -1,0 +1,14 @@
+<mat-card class="mat-body notice">
+  <p>{{'form.localized.1'|translate}}<br>
+    {{'form.localized.2'|translate}}</p>
+</mat-card>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form
+    [model]="formValues"
+    [fields]="fields"
+    [form]="form"></formly-form>
+  <app-button-spinner
+    [title]="'form.save'|translate"
+    [spinning]="formStatus.submitting">
+  </app-button-spinner>
+</form>

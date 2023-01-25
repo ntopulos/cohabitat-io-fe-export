@@ -1,0 +1,149 @@
+<nav class="breadcrumb mat-body">
+  <ol>
+    <li><a [routerLink]="'/projects'|localize">{{'projects.title'|translate}}</a></li>
+    <li *ngIf="!isRevision">{{project.attributes.name}}</li>
+    <ng-container *ngIf="isRevision">
+      <li><a [routerLink]="'/projects/' + project.id | localize">{{project.attributes.name}}</a></li>
+      <li><a [routerLink]="'/projects/' + project.id + '/revisions' | localize">{{'projects.revisions.title'|translate}}</a></li>
+      <li>{{project.attributes.created_at}}</li>
+    </ng-container>
+  </ol>
+</nav>
+
+<article>
+  <header>
+    <div class="title">
+
+      <h1 class="mat-display-1">{{project.attributes.name}}</h1>
+
+      <nav *ngIf="!isRevision">
+        <ul>
+          <li>
+            <a mat-button [routerLink]="'/projects/' + project.id + '/edit' | localize">
+              <mat-icon>edit</mat-icon>
+              <span>{{'projects.edit.link-title'|translate}}</span>
+            </a>
+          </li>
+          <li>
+            <a mat-button [routerLink]="'/projects/' + project.id + '/revisions' | localize">
+              <mat-icon>access_time</mat-icon>
+            <span>{{'projects.revisions.link-title'|translate}}</span>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a mat-button (click)="gotToComments()">
+              <mat-icon>comment</mat-icon>
+              {{'comments.title'|translate}}
+              <ng-container *ngIf="commentsTotalCount > 0">({{commentsTotalCount}})</ng-container>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div *ngIf="isRevision" class="revision-notification mat-body">
+        <p>
+          {{'projects.revisions.archive-msg.l1.1'|translate}}<a [routerLink]="'/projects/' + project.id + '/revisions' | localize">{{'projects.revisions.archive-msg.l1.2'|translate}}</a>{{'projects.revisions.archive-msg.l1.3'|translate}}<a [routerLink]="'/projects/' + project.id | localize">{{'projects.revisions.archive-msg.l1.4'|translate}}</a>.</p>
+        <p>{{'projects.revisions.archive-msg.l2'|translate}}</p>
+      </div>
+
+    </div>
+
+    <app-object-image [relationships]="project.relationships" [included]="included"></app-object-image>
+
+    <div class="general">
+      <div>
+        <div>
+          <h4>{{'projects.content.meta.status'|translate}}</h4>
+          <app-object-status [objectIncluded]="included"></app-object-status>
+        </div>
+        <div>
+          <h4>{{'projects.content.meta.address'|translate}}</h4>
+          <app-object-address [addressFormatted]="project.attributes.address.formatted"></app-object-address>
+          <a (click)="gotToMap()" class="mat-small">{{'object.map'|translate}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="introduction">
+      <div>
+        <app-object-text-short [texts]="project.attributes.texts"></app-object-text-short>
+      </div>
+    </div>
+
+    <div class="links">
+      <ng-container *ngIf="project.attributes.netlinks">
+        <app-project-links [netlinks]="project.attributes.netlinks"></app-project-links>
+      </ng-container>
+    </div>
+
+    <div class="tags">
+      <app-project-tags [objectIncluded]="included"></app-project-tags>
+    </div>
+  </header>
+  <mat-tab-group (selectedTabChange)="onTabChanged($event)" [(selectedIndex)]="tabIndex" id="object-tabs">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{'object.article'|translate}}
+      </ng-template>
+      <div class="tab-content">
+        <app-object-text-long [texts]="project.attributes.texts"></app-object-text-long>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{'object.images'|translate}} ({{imagesCount}})
+      </ng-template>
+      <div class="tab-content">
+        <app-object-images [ObjectFilesMeta]="projectFiles"></app-object-images>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{'object.videos'|translate}}
+        <ng-container *ngIf="project.attributes['videos']">
+          ({{project.attributes['videos'].length}})
+        </ng-container>
+      </ng-template>
+      <div class="tab-content">
+        <app-object-videos [Project]="project"></app-object-videos>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{'object.map'|translate}}
+      </ng-template>
+      <div class="tab-content">
+          <div class="map"
+          leaflet
+          [leafletOptions]="options"
+          [leafletLayers]="markers"
+          (leafletMapReady)="onMapReady($event)">
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{'projects.content.meta.properties'|translate}}
+      </ng-template>
+      <div class="tab-content">
+        <app-project-properties [objectIncluded]="included"></app-project-properties>
+      </div>
+    </mat-tab>
+    <mat-tab *ngIf="!isRevision">
+      <ng-template mat-tab-label>
+        {{'comments.title'|translate}}
+        <ng-container *ngIf="commentsTotalCount > 0; then hasComments else noComments"></ng-container>
+        <ng-template #hasComments>({{commentsTotalCount}})</ng-template>
+        <ng-template #noComments>(0)</ng-template>
+      </ng-template>
+      <div id="comments">
+        <div class="tab-content">
+          <app-comments [project_id]="project.id" (commentsLoaded)="setCommentsTotalCount($event)"></app-comments>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</article>

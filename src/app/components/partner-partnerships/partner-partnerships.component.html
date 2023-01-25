@@ -1,0 +1,11 @@
+<div>
+  <mat-card *ngFor="let p of formattedPartnerships">
+    <h4><a [routerLink]="'/projects/' + p.project.id | localize">{{p.project.attributes.name}}</a></h4>
+
+    <mat-chip-list>
+      <mat-chip *ngFor="let tg of p.tagsgroups">
+        {{tg|titlecase}}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card>
+</div>

@@ -1,0 +1,18 @@
+<nav class="breadcrumb mat-body">
+  <ol>
+    <li><a [routerLink]="'/partners'|localize">{{'partners.title'|translate}}</a></li>
+    <li><a [routerLink]="'/partners/' + partner.id | localize">{{partner.attributes.name}}</a></li>
+    <li>{{'partners.edit.title'|translate}}</li>
+  </ol>
+</nav>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="'/partners/' + partner.id + '/edit/' + link | localize"
+    [active]="link == navLinkActive">
+    {{'partners.edit.' + link + '.title' | translate}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

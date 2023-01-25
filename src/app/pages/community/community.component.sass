@@ -1,0 +1,17 @@
+@import 'imports'
+
+#community-columns
+  display: grid
+  gap: 2em
+
+  & > div
+    padding: 2em
+
+    &:not(:last-child)
+      background-color: rgb(246, 246, 246)
+
+    &:last-child
+      border: 1px dashed rgb(237, 237, 237)
+
+    & > *:first-child
+      margin-top: 0

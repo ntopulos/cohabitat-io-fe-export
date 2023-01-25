@@ -1,0 +1,134 @@
+<h1 mat-dialog-title>{{'projects.edit.images.add.title'|translate}}</h1>
+
+<div mat-dialog-content>
+  <mat-horizontal-stepper
+  [linear]="true"
+  [@.disabled]="stepperDisabledAnimation"
+  #stepper>
+    <mat-step
+    [stepControl]="firstFormGroup"
+    [editable]="stepperIsEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>{{'projects.edit.images.add.form.1.title'|translate}}</ng-template>
+        <div class="mat-body-1">
+          <p>Read carefully:</p>
+          <ul>
+            <li>We can only accept images <em>closely related to the project</em>. This is not a repository for your personal photos— we are not a web hosting service like Facebook or Pinterest.</li>
+            <li>We can accept most images that you create entirely by yourself, so long as your image does not itself depict another copyrighted work.</li>
+            <li>We can accept images created by others as long as the copyright holder of that image is willing to license/ has already licensed it freely.</li>
+            <li>We cannot accept any image which is not freely licensed or clearly in the public domain— most images found on the Web are not freely licensed and will be quickly deleted.</li>
+            <li>Do not publish pictures of people without their consent, in case of depicted children only their parents can give consent.</li>
+            <li>When you publish your image under a free licence, the licencing is definitive and will apply worldwide.</li>
+          </ul>
+        </div>
+        <mat-checkbox formControlName="firstCtrl" required>{{'projects.edit.images.add.form.1.agree'|translate}}</mat-checkbox>
+        <footer>
+          <button mat-button matStepperNext>{{'projects.edit.images.add.form.1.next'|translate}}</button>
+        </footer>
+      </form>
+    </mat-step>
+    <mat-step
+    [stepControl]="secondFormGroup"
+    [editable]="stepperIsEditable">
+      <form [formGroup]="secondFormGroup" (ngSubmit)="saveFileAndData(stepper)">
+        <ng-template matStepLabel>{{'projects.edit.images.add.form.2.title'|translate}}</ng-template>
+
+          <mat-form-field>
+            <mat-label>{{'projects.edit.images.add.form.2.type'|translate}}</mat-label>
+            <mat-select formControlName="filetype" required>
+              <mat-option *ngFor="let ft of filetypes" [value]="ft.attributes.name" [disabled]="ft.attributes.name!='photography'">
+                {{ft.attributes.descriptions[0].name}}
+                <ng-container *ngIf="ft.attributes.name!='photography'">
+                  (not yet supported)
+                </ng-container>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-card class="mat-body notice">
+            <p>{{ 'projects.edit.images.add.form.2.file.constraints.size' | translate: {min: photographyConstraints.min, max: photographyConstraints.max} }}</p>
+          </mat-card>
+
+          <ngx-file-drop
+          dropZoneLabel="Drop files here"
+          (onFileDrop)="dropped($event)"
+          [dropZoneClassName]="'dropzone'"
+          [contentClassName]="'contentzone'">
+            <ng-template
+            ngx-file-drop-content-tmp
+            let-openFileSelector="openFileSelector">
+
+              <div *ngIf="!previewUrl">
+                <p>{{'projects.edit.images.add.form.2.file.drag'|translate}}*</p>
+                <button type="button" mat-flat-button (click)="openFileSelector()">{{'projects.edit.images.add.form.2.file.browse'|translate}}</button>
+              </div>
+              <ng-container *ngIf="previewUrl">
+                <img [src]="previewUrl" height="300" (click)="openFileSelector()" />
+              </ng-container>
+
+              </ng-template>
+          </ngx-file-drop>
+
+          <div class="licences">
+            <mat-radio-group formControlName="licence">
+              <label>{{'projects.edit.images.add.form.2.licence.t'|translate}}*</label>
+              <mat-radio-button *ngFor="let licence of licences" [value]="licence.name">
+                {{licence.name}}
+                <a mat-button href="{{licence.url}}" target="_blank">
+                  {{'projects.edit.images.add.form.2.licence.d'|translate}}
+                  <mat-icon>launch</mat-icon>
+                </a>
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <mat-form-field>
+            <input
+            matInput
+            formControlName="source"
+            placeholder="{{'projects.edit.images.add.form.2.source.t'|translate}}">
+            <mat-hint>{{'projects.edit.images.add.form.2.source.h'|translate}} Wikimedia</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+            matInput
+            type="url"
+            formControlName="source_url"
+            placeholder="{{'projects.edit.images.add.form.2.source_url'|translate}}">
+            <mat-hint>https://...</mat-hint>
+            </mat-form-field>
+          <mat-form-field>
+            <input
+            matInput
+            formControlName="author"
+            placeholder="{{'projects.edit.images.add.form.2.author.t'|translate}}">
+            <mat-hint>{{'projects.edit.images.add.form.2.author.h'|translate}}</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+            matInput
+            formControlName="file_description"
+            placeholder="{{'projects.edit.images.add.form.2.description.t'|translate}}"
+            required>
+            <mat-hint>{{'projects.edit.images.add.form.2.description.h'|translate}}</mat-hint>
+          </mat-form-field>
+
+          <footer>
+            <app-button-spinner
+              [title]="'projects.edit.images.add.form.2.action'|translate"
+              [spinning]="formStatus.submitting">
+            </app-button-spinner>
+            <button mat-button matStepperPrevious [disabled]="formStatus.submitting">{{'projects.edit.images.add.form.2.back'|translate}}</button>
+          </footer>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>{{'projects.edit.images.add.form.3.title'|translate}}</ng-template>
+      <app-notification [success]="'The image has been uploaded.'"></app-notification>
+
+      <footer>
+        <button mat-button mat-dialog-close>{{'projects.edit.images.add.form.3.close'|translate}}</button>
+      </footer>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

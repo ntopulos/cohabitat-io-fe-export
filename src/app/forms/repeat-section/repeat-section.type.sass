@@ -1,0 +1,18 @@
+// repeated section
+mat-card
+  display: flex
+  flex-direction: row
+  margin-bottom: 1em
+
+  & > *:first-child
+    flex-basis: auto
+    flex-grow: 1
+
+  & > *:last-child
+    padding-left: 1em
+    display: flex
+    justify-content: center
+
+// add button section
+:host > div
+  margin-bottom: 1em

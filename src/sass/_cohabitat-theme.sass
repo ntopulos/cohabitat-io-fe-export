@@ -1,0 +1,36 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming'
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core()
+
+// define a real custom palette (using http://mcg.mbitson.com)
+/* For use in src/lib/core/theming/_palette.scss */
+$md-cohabitatprimary: (50: #e1f0f2, 100: #b3d9de, 200: #81c0c8, 300: #4ea6b1, 400: #2893a1, 500: #028090, 600: #027888, 700: #016d7d, 800: #016373, 900: #015061, A100: #91e8ff, A200: #5eddff, A400: #2bd3ff, A700: #12cdff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000))
+$md-cohabitataccent: (50: #f9fcfc, 100: #f1f8f9, 200: #e7f3f5, 300: #ddeef0, 400: #d6ebed, 500: #cfe7ea, 600: #cae4e7, 700: #c3e0e4, 800: #bddde1, 900: #b2d7db, A100: #ffffff, A200: #ffffff, A400: #ffffff, A700: #ffffff, contrast: (50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000))
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cohabitat-io-primary: mat-palette($md-cohabitatprimary)
+$cohabitat-io-accent: mat-palette($md-cohabitataccent)
+
+// The warn palette is optional (defaults to red).
+$cohabitat-io-warn: mat-palette($mat-red)
+
+// Create the theme object (a Sass map containing all of the palettes).
+$cohabitat-io-theme: mat-light-theme($cohabitat-io-primary, $cohabitat-io-accent, $cohabitat-io-warn)
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cohabitat-io-theme)
+
+
+body
+  margin: 0
+  font-family: Roboto, "Helvetica Neue", sans-serif

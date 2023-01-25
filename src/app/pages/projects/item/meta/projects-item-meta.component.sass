@@ -1,0 +1,117 @@
+@import 'imports'
+
+$map-height: 400px
+$header-gap: 2rem
+$introduction-shift: 7rem
+
+
+header
+  display: grid
+  grid-template-areas: 'title' 'illustration' 'introduction' 'general' 'links' 'tags'
+  gap: $header-gap
+  margin-bottom: 2em
+
+  @include respond-to('medium')
+    grid-template-columns: .75fr .75fr 1fr
+    grid-template-areas: 'title title title' 'illustration illustration general' 'links introduction introduction' 'tags tags tags'
+
+  & > div.title
+    grid-area: title
+
+  app-object-image
+    grid-area: illustration
+
+  & > div.general
+    grid-area: general
+
+  & > div.introduction
+    grid-area: introduction
+
+  & > div.tags
+    grid-area: tags
+
+  & > div.links
+    grid-area: links
+
+  & > div.properties
+    grid-area: properties
+
+.title
+  display: grid
+  gap: 1em
+
+  h1
+    margin: 0
+
+  nav
+    border: 1px $color-grey-border
+    border-style: solid none
+    justify-content: space-between
+    display: flex
+
+    ul
+      padding: 0
+      margin: .25em 0
+      list-style-type: none
+      display: flex
+      flex-direction: row
+
+      li:not(:first-child)
+        margin-left: .5em
+
+    a
+      transform: scale(.9)
+      opacity: .8
+
+    span
+      display: none
+
+      @include respond-to('small')
+        display: inline
+        padding-left: .2em
+
+.general
+  @include respond-to('medium')
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-bottom: $introduction-shift
+
+  & > div
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    gap: $header-gap
+
+  a
+    cursor: pointer
+
+.introduction
+  & > div
+    font-size: 1.5em
+    font-weight: 300
+    background-color: #fff
+    box-sizing: border-box
+
+    @include respond-to('medium')
+      padding: 2em 2em 1em
+      margin-top: -$header-gap -$introduction-shift
+      min-height: $header-gap + $introduction-shift
+
+.links
+  display: flex
+
+  @include respond-to('medium')
+    justify-content: center
+
+#comments
+  padding: 0 .5em
+
+.tab-content
+  margin-top: 2em
+  margin-bottom: 2em
+
+.map
+  height: $map-height
+
+mat-tab-group
+  min-height: $map-height + 50px

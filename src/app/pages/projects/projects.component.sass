@@ -1,0 +1,164 @@
+@import 'imports'
+
+$object-column-width: 700px
+$object-grid-spacing: 24px
+
+nav
+  display: none
+  padding: 0
+
+  @include respond-to('large')
+    display: flex
+
+  & > div
+    flex-grow: 1
+    display: grid
+    grid-template-columns: $object-column-width - 0 * $object-grid-spacing auto
+    padding: 0
+
+    & > div
+      padding: 0 $padding-base
+
+    & > div,
+    & > div > div
+      display: flex
+      align-items: center
+
+    .listFilters
+      display: grid
+      grid-template-columns: repeat(2,1fr)
+      gap: $object-grid-spacing
+
+      button
+        margin-right: $padding-base
+
+    .mapFilters
+      justify-content: flex-end
+
+  span
+    background-color: $color-grey-border
+    padding: .25em .5em
+    margin-left: 1em
+
+.search ::ng-deep .mat-form-field-wrapper
+   margin-bottom: -1.25em
+   margin-top: -1em
+
+
+.loading-overlay
+  position: fixed
+  top: $app-bar-height-large
+  bottom: 0
+  background: rgba(255,255,255,.8)
+  left: 0
+  right: 0
+  z-index: 1005
+  display: flex
+
+  & > *
+    margin: auto
+
+#objects-layout
+  position: relative
+  height: calc(100vh - #{$app-bar-height})
+  margin-bottom: -$app-bar-height
+
+  @include respond-to('small')
+    height: calc(100vh - #{$app-bar-height-large})
+    margin-bottom: -$app-bar-height-large
+
+  @include respond-to('large')
+    display: grid
+    grid-template-columns: $object-column-width auto
+    height: auto
+    margin-bottom: 0
+
+  a
+    text-decoration: none
+    height: 100%
+    display: flex
+
+    mat-card
+      width: 100%
+      box-sizing: border-box
+
+  #objects-container
+    gap: $object-grid-spacing
+    padding: $padding-base
+    grid-template-columns: repeat(2, 1fr)
+    display: none
+
+    @include respond-to('large')
+      display: grid
+
+  #map-container
+    @include respond-to('null-large')
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+
+  #map
+    display: block
+    background-color: lightgrey
+    box-sizing: border-box
+    width: 100%
+    height: calc(100vh - #{$app-bar-height})
+
+    @include respond-to('small')
+      height: calc(100vh - #{$app-bar-height-large} - #{$tools-bar-height})
+
+    @include respond-to('large')
+      position: sticky !important
+      top: $app-bar-height-large + $tools-bar-height
+
+mat-card
+  border-radius: 0
+  border: 1px solid $color-grey-border
+  transition: background-color $time-base
+  scroll-margin: $app-bar-height + $tools-bar-height + 20px
+
+.outlined
+  // outline: 2px solid $color-theme-primary
+  background-color: rgba($color-theme-secondary,.2)
+  border-color: rgba($color-theme-primary, 0.87)
+
+
+#object-drawer
+  position: fixed
+  bottom: 0
+  left: 1em
+  right: 1em
+  z-index: 1000
+  background-color: #fff
+  overflow: hidden
+
+  @include respond-to(large)
+    display: none
+
+
+button
+  border-radius: 0
+
+.tagsFilterButtonActive
+  background-color: $color-theme-secondary
+
+// Filters Tags
+::ng-deep .mat-menu-panel
+  max-width: 100%
+
+::ng-deep .projectsTagsFilters
+  padding: 1em
+
+  .mat-form-field-wrapper
+    padding: 0
+
+  .tags-groups > *
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    grid-gap: .25em
+
+  formly-field-mat-multicheckbox
+    display: grid
+    font-size: .9em

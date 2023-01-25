@@ -1,0 +1,21 @@
+<div
+  [@fadeInOut]="currentState"
+  [@expand]="expandState"
+  (@expand.done)="goToProject()">
+  <div *ngIf="project" (swipedown)="close()" (swipeup)="swipeup()">
+    <a *ngIf="image" [routerLink]="'/projects/' + project.id | localize">
+      <img [src]="image.attributes.urls.thumbnail_fixed">
+    </a>
+    <div class="drawer-content">
+      <a [routerLink]="'/projects/' + project.id | localize">
+        <h2 class="mat-h1">{{project.attributes.name}}</h2>
+      </a>
+      <span class="mat-caption">{{project.attributes.status}}</span>
+      <div>
+        <button mat-icon-button (click)="close()" aria-label="Close drawer">
+          <mat-icon class="lighter">expand_more</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

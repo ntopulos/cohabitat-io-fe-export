@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-subtitle>{{'object.edit.location.title'|translate}}</mat-card-subtitle>
+  <p class="mat-body">{{'object.edit.location.introduction'|translate}}</p>
+  <form>
+    <formly-form
+      [fields]="addressFormFields"
+      [form]="addressForm"
+      (onAddressSelected)="doSomething($event)"></formly-form>
+  </form>
+  <ul id="coordinates-ui">
+    <li>{{'object.edit.location.latitude'|translate}}*: {{formValues.basics.coordinates.latitude}}</li>
+    <li>{{'object.edit.location.longitude'|translate}}*: {{formValues.basics.coordinates.longitude}}</li>
+  </ul>
+  <div style="height: 400px;"
+    leaflet
+    [leafletOptions]="options"
+    [leafletLayers]="markers"
+    (leafletMapReady)="onMapReady($event)"
+    (leafletMapMoveEnd)="onMapMoveEnd()">
+  </div>
+</mat-card>

@@ -1,0 +1,72 @@
+<h2 class="mat-h2">{{'projects.edit.images.add.title'|translate}}</h2>
+<button
+  mat-button
+  color="primary"
+  (click)="openUploadDialog()">
+  {{'projects.edit.images.add.action'|translate}}
+</button>
+
+<ng-container *ngIf="files">
+  <h2 class="mat-h2">{{'projects.edit.images.manage.title'|translate}}</h2>
+  <p>{{'projects.edit.images.manage.drag-to-reorder'|translate}}</p>
+
+  <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+    <div class="list-box" *ngFor="let f of files" cdkDrag [ngClass]="{'main': f.attributes.is_main}">
+      <div class="handle" cdkDragHandle>
+        <mat-icon>drag_indicator</mat-icon>
+      </div>
+      <div>
+        <img [src]="f.file.attributes.urls.thumbnail_fixed">
+      </div>
+      <div>
+        <table>
+          <tr>
+            <th>{{'projects.edit.images.manage.file.id'|translate}}</th>
+            <td><span title="{{f.file.id}}">{{ (f.file.id | slice:0:12)+'…' }}</span></td>
+          </tr>
+          <tr>
+            <th>{{'projects.edit.images.manage.file.dimensions'|translate}}</th>
+            <td>{{f.file.attributes.width}}x{{f.file.attributes.height}} pixels</td>
+          </tr>
+          <tr *ngIf="f.file.meta.attributes.author">
+            <th>{{'projects.edit.images.manage.file.author'|translate}}</th>
+            <td>{{f.file.meta.attributes.author}}</td>
+          </tr>
+          <tr *ngIf="f.file.meta.attributes.source">
+            <th>{{'projects.edit.images.manage.file.source'|translate}}</th>
+            <td>{{f.file.meta.attributes.source}}</td>
+          </tr>
+          <tr *ngIf="f.file.meta.attributes.source_url">
+            <th>{{'projects.edit.images.manage.file.source-url'|translate}}</th>
+            <td>{{f.file.meta.attributes.source_url}}</td>
+          </tr>
+          <tr>
+            <th>Licence id</th>
+            <td>{{f.file.meta.relationships.licence.data.id}}</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <button
+        mat-button
+        [disabled]="f.attributes.is_main"
+        (click)="openMakeMainDialog({project: project, file: f})">
+          {{'projects.edit.images.manage.make-main'|translate}}
+        </button>
+        <button
+        mat-button
+        color="warn"
+        (click)="openDeleteDialog({project: project, file: f})">
+          {{'form.delete'|translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <form (ngSubmit)="submit()">
+    <app-button-spinner
+      [title]="'projects.edit.images.manage.reorder-action'|translate"
+      [spinning]="formStatus.submitting">
+    </app-button-spinner>
+  </form>
+</ng-container>

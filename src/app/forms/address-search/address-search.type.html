@@ -1,0 +1,21 @@
+<mat-form-field>
+  <mat-select
+    [formControl]="formControl"
+    placeholder="{{placeholder}}"
+    (selectionChange)="selectAddress(field.formControl.value.geometry.location)">
+      <mat-option>
+        <ngx-mat-select-search
+          [formControl]="searchCtrl"
+          placeholderLabel="Type an address..."
+          noEntriesFoundLabel="No match"
+          [searching]="searching">
+        </ngx-mat-select-search>
+      </mat-option>
+      <mat-option
+        *ngFor="let address of serverSideResults | async"
+        [value]="address"
+        (click)="selectAddress(address.geometry.location)">
+        {{address.formatted_address}}
+      </mat-option>
+  </mat-select>
+</mat-form-field>

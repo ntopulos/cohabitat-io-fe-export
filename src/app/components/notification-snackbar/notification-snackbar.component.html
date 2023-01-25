@@ -1,0 +1,7 @@
+<ng-container *ngIf="isList">
+  <ul>
+    <li *ngFor="let notification of data | keyvalue">{{ notification.value }}</li>
+  </ul>
+</ng-container>
+
+<div *ngIf="!isList">{{ data }}</div>

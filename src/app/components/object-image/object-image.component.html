@@ -1,0 +1,6 @@
+<a *ngIf="image" [href]="image.attributes.urls.large" target="_blank">
+  <img [src]="image.attributes.urls.medium">
+</a>
+<div *ngIf="!image" class="no-image">
+  <mat-icon>image</mat-icon>
+</div>

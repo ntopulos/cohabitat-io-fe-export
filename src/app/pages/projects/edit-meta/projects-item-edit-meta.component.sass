@@ -1,0 +1,23 @@
+// Styles are partially defined in main style.css
+@import 'imports'
+
+#create-form
+  display: grid
+  gap: 2em
+
+  @include respond-to('large')
+    grid-template-columns: 1fr 1fr
+
+button
+  margin-top: 1em
+
+#project-created
+  animation: fadein 2s
+  border-radius: 5px
+  color: white
+  padding: 1em
+  background-color: #399e50
+  color: #fff
+
+  a
+    color: inherit

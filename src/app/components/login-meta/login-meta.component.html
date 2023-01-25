@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form
+    [model]="formValues"
+    [fields]="fields"
+    [form]="form"></formly-form>
+  <app-button-spinner
+    [title]="'authentication.login.form.button'|translate"
+    [spinning]="formStatus.submitting">
+  </app-button-spinner>
+</form>
+
+<p><a [routerLink]="'/account-password-reset' | localize" mat-dialog-close>{{'authentication.login.password-forgotten'|translate}}</a></p>
+<p>{{'authentication.login.not-registered.sentence'|translate}} <a [routerLink]="'/register' | localize" mat-dialog-close>{{ 'authentication.login.not-registered.action' | translate }}</a></p>

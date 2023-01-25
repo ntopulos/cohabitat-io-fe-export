@@ -1,0 +1,29 @@
+<form *ngIf="!partnerCreated" id="create-form" [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form
+    [model]="formValues"
+    [fields]="fields"
+    [form]="form"></formly-form>
+
+  <div>
+    <app-object-location
+      [(formValues)]="formValues"
+      [object]="partner"
+      (mapMoved)="mapMoved($event)"></app-object-location>
+  </div>
+
+  <div>
+    <app-button-spinner
+      [title]="(partner ? 'form.save' : 'form.create') | translate"
+      [spinning]="formStatus.submitting">
+    </app-button-spinner>
+  </div>
+</form>
+
+<div *ngIf="partnerCreated" id="partner-created">
+  <p>{{'partners.create.done.msg'|translate}}</p>
+  <p>{{'partners.create.done.next.t'|translate}}</p>
+  <ul>
+    <li><a [routerLink]="'/partners/'+partnerCreated.id|localize">{{'partners.create.done.next.1'|translate}}</a></li>
+    <li><a [routerLink]="'/partners/'+partnerCreated.id+'/edit/basics'|localize">{{'partners.create.done.next.2'|translate}}</a></li>
+  </ul>
+</div>
